@@ -1,0 +1,67 @@
+---
+title: "case study"
+author: Yuqi Wang
+date: September 2020
+output: github_document
+---
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(patchwork)
+
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "90%"
+)
+
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
+```
+
+## Load the dataset
+```{r}
+data(nyc_airbnb)
+
+nyc_airbnb %>% view()
+# when the dataset is too large, use slice() to view only some lines of the dataset.
+```
+
+## Brainstorm some questions
+
+what is the best Airbnb in station island for <$100
+waht price range is popular in each borough? most rented?
+what apartment features are related to price?
+hosts have higher ratiings?
+
+## Answer some questions
+
+data cleaning
+
+```{r}
+nyc_airbnb = 
+  nyc_airbnb %>% 
+  mutate(stars = review_scores_location / 2< 100)
+  
+  
+  
+```
+
+
+
+
+
+
+
+
+
+
+
